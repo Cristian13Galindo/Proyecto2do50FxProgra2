@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="510.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.MainWindowControler">
+   <children>
+      <ToolBar layoutX="30.0" layoutY="81.0" prefHeight="366.0" prefWidth="466.0">
+         <items>
+            <ImageView fitHeight="400.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ImagenParaLoginWindow.png" />
+               </image>
+            </ImageView>
+         </items>
+      </ToolBar>
+      <MenuBar layoutX="37.0" layoutY="38.0" prefHeight="27.0" prefWidth="218.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Nuevo" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Acerca de">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Acerca del programa" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Soporte">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Ayuda" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar layoutX="496.0" layoutY="81.0" orientation="VERTICAL" prefHeight="366.0" prefWidth="200.0">
+         <items>
+            <Label text="Ingresar">
+               <graphic>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#callLoginWindow" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/login_icon_137429.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Crear Cuenta">
+               <graphic>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" onMouseClicked="#callCreateUserWindow" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/register_login_signup_icon_219991.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Salir">
+               <graphic>
+                  <ImageView fitHeight="110.0" fitWidth="110.0" onMouseClicked="#closeWindow" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/login_icon_151220.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </items>
+      </ToolBar>
+   </children>
+</AnchorPane>
