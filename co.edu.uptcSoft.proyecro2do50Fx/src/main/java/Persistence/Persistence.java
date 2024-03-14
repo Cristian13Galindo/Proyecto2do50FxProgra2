@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Persistence {
-    //private Map<String, ArrayList<Charge>> userCompany = new HashMap<>();
-    //private Map<String, ArrayList<Charge>> userTransport = new HashMap<>();
 
     public void writeOferent(ArrayList<Oferent> oferent) throws IOException {
        ObjectOutputStream write = new ObjectOutputStream(new FileOutputStream("C:\\Users\\angel\\OneDrive\\Documentos\\ProyectDocuments\\oferents.dat"));
@@ -37,4 +35,27 @@ public class Persistence {
         return company;
     }
 
+    public void writeChargeCompany(Map<String, ArrayList<Charge>> charge) throws IOException {
+        ObjectOutputStream write = new ObjectOutputStream(new FileOutputStream("C:\\Users\\angel\\OneDrive\\Documentos\\ProyectDocuments\\chargeCompany.dat"));
+        write.writeObject(charge);
+        write.close();
+    }
+    public Map<String, ArrayList<Charge>> readChargeCompany() throws IOException, ClassNotFoundException {
+        ObjectInputStream read = new ObjectInputStream(new FileInputStream("C:\\Users\\angel\\OneDrive\\Documentos\\ProyectDocuments\\chargeCompany.dat"));
+        Map<String, ArrayList<Charge>> charge = (Map<String, ArrayList<Charge>>) read.readObject();
+        read.close();
+        return charge;
+    }
+
+    public void writeChargeTransport(Map<String, ArrayList<Charge>> charge) throws IOException {
+        ObjectOutputStream write = new ObjectOutputStream(new FileOutputStream("C:\\Users\\angel\\OneDrive\\Documentos\\ProyectDocuments\\chargeTransportTransport.dat"));
+        write.writeObject(charge);
+        write.close();
+    }
+    public Map<String, ArrayList<Charge>> readChargeTransport() throws IOException, ClassNotFoundException {
+        ObjectInputStream read = new ObjectInputStream(new FileInputStream("C:\\Users\\angel\\OneDrive\\Documentos\\ProyectDocuments\\chargeTransport.dat"));
+        Map<String, ArrayList<Charge>> charge = (Map<String, ArrayList<Charge>>) read.readObject();
+        read.close();
+        return charge;
+    }
 }
