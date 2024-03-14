@@ -1,6 +1,8 @@
 package model;
 
-public class Company extends User{
+import java.io.Serializable;
+
+public class Company extends User implements Serializable {
     Charge charges = new Charge();
 
     public Company(String userName, String password, byte typeUser) {

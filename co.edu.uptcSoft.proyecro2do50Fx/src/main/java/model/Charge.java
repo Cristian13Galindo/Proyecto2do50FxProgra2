@@ -1,6 +1,8 @@
 package model;
 
-public class Charge {
+import java.io.Serializable;
+
+public class Charge implements Serializable {
 
     //Atributos
     private String description;
