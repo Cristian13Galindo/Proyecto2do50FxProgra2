@@ -24,7 +24,7 @@
       <Button fx:id="btnCreateUser" layoutX="374.0" layoutY="329.0" mnemonicParsing="false" onAction="#clicSignUp" text="Crear Usuario" />
       <Label layoutX="102.0" layoutY="333.0" text="¿Aun no tiene una cuenta? Cree su cuenta aqui:" />
       <Label layoutX="314.0" layoutY="216.0" text="Rol de usuario:" />
-      <ComboBox layoutX="311.0" layoutY="233.0" prefHeight="25.0" prefWidth="149.0" promptText="Rol" />
+      <ComboBox fx:id="cbRol" layoutX="311.0" layoutY="233.0" onShowing="#rolesList" prefHeight="25.0" prefWidth="149.0" promptText="Rol" />
       <Button fx:id="btnBack" layoutX="27.0" layoutY="51.0" mnemonicParsing="false" onAction="#clicBack" text="Atras" />
       <Label layoutX="311.0" layoutY="41.0" prefHeight="20.0" prefWidth="165.0" text="Te damos la bienvenida">
          <font>

@@ -25,17 +25,17 @@
         <menus>
           <Menu mnemonicParsing="false" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" text="Nuevo" />
+              <MenuItem fx:id="btnSalir" mnemonicParsing="false" onAction="#closeProgram" text="Salir" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Acerca de">
             <items>
-              <MenuItem mnemonicParsing="false" text="Acerca del programa" />
+              <MenuItem fx:id="btnAbouthTheProgram" mnemonicParsing="false" onAction="#showAbouthTheProgram" text="Acerca del programa" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Soporte">
             <items>
-              <MenuItem mnemonicParsing="false" text="Ayuda" />
+              <MenuItem fx:id="btnSupport" mnemonicParsing="false" onAction="#showSupport" text="Ayuda" />
             </items>
           </Menu>
         </menus>

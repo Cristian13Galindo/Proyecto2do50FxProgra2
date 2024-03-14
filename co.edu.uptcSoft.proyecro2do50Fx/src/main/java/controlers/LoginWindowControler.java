@@ -1,17 +1,20 @@
 package controlers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import ui.HelloApplication;
 
 import java.io.IOException;
 import java.util.Objects;
+
+import static ui.HelloApplication.completeCombo;
 
 public class LoginWindowControler {
 
@@ -31,9 +34,16 @@ public class LoginWindowControler {
     //Este es el campo de ingreso del usuario
     public TextField txtUser;
 
+    // boton atras
+    public Button btnBack;
+
+    //rol en el combobox
+    public ComboBox cbRol;
+    ObservableList<String> rolesListCombo = FXCollections.observableArrayList("Compañia","Oferente");
+
+
     //Stage
     Stage createUserWindowStage = new Stage();
-
 
     /*
     ** Dos eventos de botones
@@ -76,6 +86,15 @@ public class LoginWindowControler {
 
     //Boton "atras" solo sirve para cerrar la ventana realmente
     public void clicBack(ActionEvent actionEvent) {
+        Scene scene = ((Node) actionEvent.getSource()).getScene();
+        Stage stage = (Stage) scene.getWindow();
+        stage.close();
+    }
+
+    //Combobox que lista los roles
+    public void rolesList(Event event) {
+        completeCombo(cbRol, rolesListCombo);
+
     }
 
 
