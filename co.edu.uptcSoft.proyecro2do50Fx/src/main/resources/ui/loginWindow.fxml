@@ -8,21 +8,29 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.LoginWindowControler">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.LoginWindowControler">
    <children>
-      <Button fx:id="btnAcces" layoutX="415.0" layoutY="221.0" mnemonicParsing="false" onAction="#clicSignIn" text="Entrar" />
-      <Label layoutX="280.0" layoutY="65.0" text="usuario" />
-      <Label layoutX="257.0" layoutY="124.0" text="contraseña" />
-      <PasswordField fx:id="txtPassword" layoutX="352.0" layoutY="119.0" prefHeight="31.0" prefWidth="186.0" />
-      <TextField fx:id="txtUser" layoutX="352.0" layoutY="60.0" />
-      <ImageView fitHeight="211.0" fitWidth="200.0" layoutX="23.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="btnAcces" layoutX="401.0" layoutY="272.0" mnemonicParsing="false" onAction="#clicSignIn" text="Ingresar" />
+      <Label layoutX="311.0" layoutY="84.0" text="Usuario:" />
+      <Label layoutX="311.0" layoutY="143.0" text="Contraseña:" />
+      <PasswordField fx:id="txtPassword" layoutX="311.0" layoutY="160.0" prefHeight="32.0" prefWidth="149.0" />
+      <TextField fx:id="txtUser" layoutX="311.0" layoutY="101.0" />
+      <ImageView fitHeight="278.0" fitWidth="208.0" layoutX="85.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/ImagenParaLoginWindow.png" />
          </image></ImageView>
-      <Button fx:id="btnCreateUser" layoutX="415.0" layoutY="308.0" mnemonicParsing="false" onAction="#clicSignUp" text="Crear Usuario" />
-      <Label layoutX="88.0" layoutY="313.0" text="¿Aun no tiene una cuenta? Cree su cuenta aqui:" />
-      <Label layoutX="233.0" layoutY="180.0" text="Rol de usuario" />
-      <ComboBox layoutX="352.0" layoutY="175.0" prefWidth="150.0" />
+      <Button fx:id="btnCreateUser" layoutX="374.0" layoutY="329.0" mnemonicParsing="false" onAction="#clicSignUp" text="Crear Usuario" />
+      <Label layoutX="102.0" layoutY="333.0" text="¿Aun no tiene una cuenta? Cree su cuenta aqui:" />
+      <Label layoutX="314.0" layoutY="216.0" text="Rol de usuario:" />
+      <ComboBox layoutX="311.0" layoutY="233.0" prefHeight="25.0" prefWidth="149.0" promptText="Rol" />
+      <Button fx:id="btnBack" layoutX="27.0" layoutY="51.0" mnemonicParsing="false" onAction="#clicBack" text="Atras" />
+      <Label layoutX="311.0" layoutY="41.0" prefHeight="20.0" prefWidth="165.0" text="Te damos la bienvenida">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="311.0" layoutY="53.0" text="Ingresa tus credenciales" />
    </children>
 </Pane>

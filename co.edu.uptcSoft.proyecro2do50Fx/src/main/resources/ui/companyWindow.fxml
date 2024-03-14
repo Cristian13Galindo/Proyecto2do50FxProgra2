@@ -3,24 +3,34 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.CompanyWindowControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.CompanyWindowControler">
    <children>
-      <Label layoutX="210.0" layoutY="44.0" text="Empresa:" />
-      <Label layoutX="63.0" layoutY="101.0" text="Descripcion:" />
-      <Label layoutX="91.0" layoutY="147.0" text="Origen:" />
-      <Label layoutX="89.0" layoutY="190.0" text="Destino:" />
-      <Label layoutX="104.0" layoutY="235.0" text="Valor:" />
-      <Label layoutX="86.0" layoutY="286.0" text="ID Carga:" />
-      <TextField fx:id="txtDescriptionCharge" layoutX="198.0" layoutY="96.0" />
-      <TextField fx:id="txtOriginCharge" layoutX="198.0" layoutY="142.0" />
-      <TextField fx:id="txtDestinationCharge" layoutX="198.0" layoutY="185.0" />
-      <TextField fx:id="txtValueCharge" layoutX="198.0" layoutY="230.0" />
-      <TextField fx:id="txtIdCharge" layoutX="198.0" layoutY="281.0" />
-      <Button fx:id="btnCreateCharge" layoutX="443.0" layoutY="185.0" mnemonicParsing="false" text="Crear Carga" />
-      <Label fx:id="txtMostrarEmpresa" layoutX="303.0" layoutY="44.0" text="&quot;Nombre de la empresa&quot;" />
-      <Button fx:id="btnBack" layoutX="90.0" layoutY="39.0" mnemonicParsing="false" text="Atras" />
+      <Label layoutX="362.0" layoutY="42.0" text="Hola !">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="360.0" layoutY="73.0" text="Material a transportar:" />
+      <Label layoutX="362.0" layoutY="128.0" text="Origen:" />
+      <Label layoutX="360.0" layoutY="186.0" text="Destino:" />
+      <Label layoutX="360.0" layoutY="248.0" text="Valor:" />
+      <Label layoutX="359.0" layoutY="308.0" prefHeight="18.0" prefWidth="65.0" text="ID Carga: " />
+      <TextField fx:id="txtDescriptionCharge" layoutX="360.0" layoutY="91.0" />
+      <TextField fx:id="txtOriginCharge" layoutX="360.0" layoutY="146.0" />
+      <TextField fx:id="txtDestinationCharge" layoutX="360.0" layoutY="204.0" />
+      <TextField fx:id="txtValueCharge" layoutX="360.0" layoutY="266.0" />
+      <TextField fx:id="txtIdCharge" layoutX="360.0" layoutY="327.0" />
+      <Button fx:id="btnCreateCharge" layoutX="435.0" layoutY="365.0" mnemonicParsing="false" text="Crear Carga" />
+      <Label fx:id="txtMostrarEmpresa" layoutX="419.0" layoutY="43.0" text="Empresa" />
+      <Button fx:id="btnBack" layoutX="43.0" layoutY="39.0" mnemonicParsing="false" onAction="#clicBack" text="Atras" />
+      <ImageView fitHeight="329.0" fitWidth="302.0" layoutX="43.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ImagenParaCompanyWindow.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

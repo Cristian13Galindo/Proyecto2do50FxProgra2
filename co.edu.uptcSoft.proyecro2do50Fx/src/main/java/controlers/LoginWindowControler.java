@@ -1,11 +1,16 @@
 package controlers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import ui.HelloApplication;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public class LoginWindowControler {
@@ -25,6 +30,9 @@ public class LoginWindowControler {
 
     //Este es el campo de ingreso del usuario
     public TextField txtUser;
+
+    //Stage
+    Stage createUserWindowStage = new Stage();
 
 
     /*
@@ -55,6 +63,19 @@ public class LoginWindowControler {
 
     //Boton para ir a la ventana de crear usuario
     public void clicSignUp(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("createUserWindow.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 600, 550);
+            createUserWindowStage.setTitle("Transportes Uptc/createUserWindow");
+            createUserWindowStage.setScene(scene);
+            createUserWindowStage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //Boton "atras" solo sirve para cerrar la ventana realmente
+    public void clicBack(ActionEvent actionEvent) {
     }
 
 

@@ -17,18 +17,25 @@ public class MainWindowControler {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginWindow.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 550);
-            loginWindowStage.setTitle("Transportes Uptc");
+            loginWindowStage.setTitle("Transportes Uptc/loginWindow");
             loginWindowStage.setScene(scene);
             loginWindowStage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
     //Metodo que llama a la ventana CreateUserWindow
     public void callCreateUserWindow(MouseEvent mouseEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("createUserWindow.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 600, 550);
+            loginWindowStage.setTitle("Transportes Uptc/createUserWindow");
+            loginWindowStage.setScene(scene);
+            loginWindowStage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void closeWindow(MouseEvent mouseEvent) {
