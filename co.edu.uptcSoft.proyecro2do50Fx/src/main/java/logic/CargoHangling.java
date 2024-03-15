@@ -1,42 +1,55 @@
 package logic;
 
+import Persistence.Persistence;
 import model.Charge;
 import model.Company;
 import model.Oferent;
 import model.User;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CargoHangling {
+    Persistence prs = new Persistence();
     private ArrayList<Oferent> oferents = new ArrayList<>();
     private ArrayList<Company> companies = new ArrayList<>();
     private Map<String, ArrayList<Charge>> userCompany = new HashMap<>();
     private Map<String, ArrayList<Charge>> userTransport = new HashMap<>();
 
 
-    public void createUser(String userName, String password, byte typeUser) {
+    public void createUser(String userName, String password, byte typeUser) throws IOException, ClassNotFoundException {
+        oferents = prs.readoferent();
+        companies = prs.readCompany();
+        userCompany = prs.readChargeCompany();
+        userTransport = prs.readChargeTransport();
         if (typeUser == 1) {
             Oferent newOferent = new Oferent(userName, password, typeUser);
             oferents.add(newOferent);
+            prs.writeOferent(oferents);
 
             if (!userCompany.containsKey(userName)) {
                 ArrayList<Charge> charges = new ArrayList<>();
                 userCompany.put(userName, charges);
+                prs.writeChargeCompany(userCompany);
             }
         } else if (typeUser == 2) {
             Company newCompany = new Company(userName, password, typeUser);
             companies.add(newCompany);
+            prs.writeCompany(companies);
 
             if (!userTransport.containsKey(userName)) {
                 ArrayList<Charge> charges = new ArrayList<>();
                 userTransport.put(userName, charges);
+                prs.writeChargeTransport(userTransport);
             }
         }
     }
 
-    public boolean loginUser(String loginUserName, String loginPassword, byte typeUser) {
+    public boolean loginUser(String loginUserName, String loginPassword, byte typeUser) throws IOException, ClassNotFoundException {
+        oferents = prs.readoferent();
+        companies = prs.readCompany();
         if (typeUser == 1) {
             for (Oferent oferent : oferents) {
                 if (oferent.getUserName().equals(loginUserName) && oferent.getPassword().equals(loginPassword)) {
@@ -53,16 +66,19 @@ public class CargoHangling {
         return false;
     }
 
-    public void addJob(String companyName, Charge charge) {
+    public void addJob(String companyName, Charge charge) throws IOException, ClassNotFoundException {
+        userTransport = prs.readChargeTransport();
         if (userTransport.get(companyName) == null) {
             ArrayList<Charge> charges = new ArrayList<>();
             charges.add(charge);
             userTransport.put(companyName, charges);
         }
         userTransport.get(companyName).add(charge);
+        prs.writeChargeTransport(userTransport);
     }
 
-    public String showGetJobs(String companyName) {
+    public String showGetJobs(String companyName) throws IOException, ClassNotFoundException {
+        userTransport = prs.readChargeTransport();
         String jobs = "";
         ArrayList<Charge> charges = userTransport.get(companyName);
         if (charges != null && !charges.isEmpty()) {
@@ -75,18 +91,22 @@ public class CargoHangling {
         return jobs;
     }
 
-    public void createCharge(String userName, String description, String origin, String destination, Double value, String id) {
+    public void createCharge(String userName, String description, String origin, String destination, Double value, String id) throws IOException, ClassNotFoundException {
+        userCompany = prs.readChargeCompany();
         Charge chargeAux = new Charge(description, origin, destination, value, id);
         if (userCompany.containsKey(userName)) {
             userCompany.get(userName).add(chargeAux);
+            prs.writeChargeCompany(userCompany);
         } else {
             ArrayList<Charge> charges = new ArrayList<>();
             charges.add(chargeAux);
             userCompany.put(userName, charges);
+            prs.writeChargeCompany(userCompany);
         }
     }
 
-    public String showAllJobs() {
+    public String showAllJobs() throws IOException, ClassNotFoundException {
+        userCompany = prs.readChargeCompany();
         String allJobs = "";
         for (Map.Entry<String, ArrayList<Charge>> entry : userCompany.entrySet()) {
             ArrayList<Charge> charges = entry.getValue();
@@ -103,7 +123,8 @@ public class CargoHangling {
         return allJobs;
     }
 
-    public String showJobs(String companyName) {
+    public String showJobs(String companyName) throws IOException, ClassNotFoundException {
+        userCompany = prs.readChargeCompany();
         String jobs = "";
         ArrayList<Charge> charges = userCompany.get(companyName);
         if (charges != null) {
@@ -116,7 +137,8 @@ public class CargoHangling {
         return jobs;
     }
 
-    public String showDescription(String companyName, String id) {
+    public String showDescription(String companyName, String id) throws IOException, ClassNotFoundException {
+        userCompany = prs.readChargeCompany();
         String description = "";
         ArrayList<Charge> charges = userCompany.get(companyName);
         if (charges != null) {
@@ -131,7 +153,8 @@ public class CargoHangling {
         return description;
     }
 
-    public void addTransportist(String companyName, String id, String name) {
+    public void addTransportist(String companyName, String id, String name) throws IOException, ClassNotFoundException {
+        userCompany = prs.readChargeCompany();
         ArrayList<Charge> charges = userCompany.get(companyName);
         if (charges != null) {
             for (Charge c : charges) {
