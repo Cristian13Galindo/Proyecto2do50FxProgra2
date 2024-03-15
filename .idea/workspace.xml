@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0463667b-3599-434f-a746-ca9dd248af0c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Proyecto2do50FxProgra2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Proyecto2do50FxProgra2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +32,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/angel/IdeaProjects/Proyecto2do50FxProgra2/co.edu.uptcSoft.proyecro2do50Fx",
+    "last_opened_file_path": "C:/Users/camil/Desktop/IdeaProjects/Progra2-2Uptc/Proyecto2do50FxProgra2/co.edu.uptcSoft.proyecro2do50Fx",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -45,6 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710349471025</updated>
       <workItem from="1710349472066" duration="8000" />
+      <workItem from="1710460057051" duration="61000" />
     </task>
     <servers />
   </component>
