@@ -37,4 +37,9 @@ public class CreateUserWindowControler {
     public void rolesList(Event event) {
         completeCombo(cbRol, rolesListCom);
     }
+
+    //Boton para crear un usuario
+    public void clicSignUp(ActionEvent actionEvent) {
+        //aqui la logica
+    }
 }
