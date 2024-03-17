@@ -20,10 +20,10 @@ public class CargoHangling {
 
 
     public void createUser(String userName, String password, byte typeUser) throws IOException, ClassNotFoundException {
-        oferents = prs.readoferent();
-        companies = prs.readCompany();
-        userCompany = prs.readChargeCompany();
-        userTransport = prs.readChargeTransport();
+//        oferents = prs.readoferent();
+//        companies = prs.readCompany();
+//        userCompany = prs.readChargeCompany();
+//        userTransport = prs.readChargeTransport();
         if (typeUser == 1) {
             Oferent newOferent = new Oferent(userName, password, typeUser);
             oferents.add(newOferent);
@@ -56,7 +56,7 @@ public class CargoHangling {
                     return true;
                 }
             }
-        } else if (typeUser == 2) {
+        } else if (typeUser == 0) {
             for (Company company : companies) {
                 if (company.getUserName().equals(loginUserName) && company.getPassword().equals(loginPassword)) {
                     return true;

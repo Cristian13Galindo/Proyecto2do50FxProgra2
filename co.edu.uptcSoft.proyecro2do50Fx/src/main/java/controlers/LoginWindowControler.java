@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import logic.CargoHangling;
 import ui.HelloApplication;
 
 import java.io.IOException;
@@ -17,7 +18,8 @@ import java.util.Objects;
 import static ui.HelloApplication.completeCombo;
 
 public class LoginWindowControler {
-
+    // Esto es objeto de la clase CargoHandling
+    CargoHangling Ch = new CargoHangling();
     /*
     ** Atributos
     */
@@ -52,11 +54,12 @@ public class LoginWindowControler {
 
     // Atributos para los botones:
     String userTxt, passwordTxt;
-    public void clicSignIn(ActionEvent actionEvent) {
+    byte typeRoll;
+    public void clicSignIn(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         userTxt = txtUser.getText();
         passwordTxt = txtPassword.getText();
-
-        if ((Objects.equals(userTxt, "camilo")) && (Objects.equals(passwordTxt, "1234"))) {
+        typeRoll = Byte.parseByte(String.valueOf((cbRol.getSelectionModel().getSelectedIndex())));
+        if (Ch.loginUser(userTxt, passwordTxt, typeRoll) == true) {
             Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);
             messageWindow.setTitle("Validación exitosa, Bienvenido al sistema");
             messageWindow.setHeaderText("");
