@@ -42,6 +42,7 @@ public class MainWindowControler {
         }
     }
 
+    //Metodo para la imagen salir del programa
     public void closeWindow(MouseEvent mouseEvent) {
         Scene scene = ((Node) mouseEvent.getSource()).getScene();
         Stage stage = (Stage) scene.getWindow();
