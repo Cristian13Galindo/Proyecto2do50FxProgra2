@@ -50,7 +50,6 @@ public class CargoHangling {
     }
 
     public int loginUser(String loginUserName, String loginPassword, byte typeUser) throws IOException, ClassNotFoundException {
-
         if (typeUser == 1) {
             oferents = prs.readOferent();
             for (Oferent oferent : oferents) {

@@ -21,7 +21,7 @@ public class CompanyWindowControler {
     public TextField txtValueCharge;
     public TextField txtIdCharge;
     public Button btnCreateCargo;
-    public TextFlow txtShowNameUser;
+    public Label txtShowNameUser;
 
     public Button btnBack;
 
@@ -43,18 +43,9 @@ public class CompanyWindowControler {
 
 
     //Metodo para mostrar el nombre
-    public void mostrarNombreUsuario() {
-        // Crear un nodo de texto con el nombre de usuario
-        Text userNameText = new Text(userNameTxt);
-
-        // Limpiar el contenido actual del TextFlow
-        txtShowNameUser.getChildren().clear();
-
-        // Agregar el nodo de texto al TextFlow
-        txtShowNameUser.getChildren().add(userNameText);
-    }
-
-
+    /*public void showNameLabel(){
+        txtShowNameUser.setText(userNameTxt);
+    }*/
 
 
     /*Metodo para crear una carga a partir de los requerimientos
@@ -76,17 +67,20 @@ public class CompanyWindowControler {
 
         if (!descriptionChargeTxt.isEmpty() && !originChargeTxt.isEmpty() && !destinationChargeTxt.isEmpty() && !valueChargeTxt.isEmpty() && !idChargeTxt.isEmpty()) {
 
+            cargoHangling.createCharge(userNameTxt,descriptionChargeTxt,originChargeTxt,destinationChargeTxt, Double.valueOf(valueChargeTxt),idChargeTxt);
+
             Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);
-            messageWindow.setTitle("Validación exitosa, Bienvenido al sistema");
+            messageWindow.setTitle("Validación exitosa");
             messageWindow.setHeaderText("");
-            messageWindow.setContentText("Bienvenido a nuestro sistema");
+            messageWindow.setContentText("Carga creada exitosamente");
             messageWindow.showAndWait();
+
 
         }else {
             Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);
-            messageWindow.setTitle("Error de acceso");
+            messageWindow.setTitle("Validación erronea");
             messageWindow.setHeaderText("");
-            messageWindow.setContentText("USUARIO O PASSWORD INCORRECTOS");
+            messageWindow.setContentText("La carga no fue creada, revise que los campos estén completos");
             messageWindow.showAndWait();
         }
 

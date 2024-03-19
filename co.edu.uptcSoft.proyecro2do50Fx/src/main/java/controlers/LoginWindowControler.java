@@ -59,6 +59,9 @@ public class LoginWindowControler {
     //Stage de compañia
     Stage companyWindowStage = new Stage();
 
+    //objeto de la clase companyWindow
+    //CompanyWindowControler companyWindowControler = new CompanyWindowControler();
+
     /*
     ** Dos eventos de botones
     */
@@ -102,6 +105,7 @@ public class LoginWindowControler {
                 Scene scene = new Scene(fxmlLoader.load(), 600, 550);
                 companyWindowStage.setTitle("Transportes Uptc/createUserWindow");
                 companyWindowStage.setScene(scene);
+                //companyWindowControler.showNameLabel();
                 companyWindowStage.show();
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -114,6 +118,9 @@ public class LoginWindowControler {
             messageWindow.setContentText("USUARIO O PASSWORD INCORRECTOS");
             messageWindow.showAndWait();
         }
+        Scene scene = ((Node) actionEvent.getSource()).getScene();
+        Stage stage = (Stage) scene.getWindow();
+        stage.close();
     }
 
     //Boton para ir a la ventana de crear usuario

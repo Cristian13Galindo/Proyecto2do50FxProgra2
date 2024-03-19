@@ -55,7 +55,9 @@ public class CreateUserWindowControler {
         messageWindow.setHeaderText("");
         messageWindow.setContentText("Ususario Creado con Exito");
         messageWindow.showAndWait();
-
+        Scene scene = ((Node) actionEvent.getSource()).getScene();
+        Stage stage = (Stage) scene.getWindow();
+        stage.close();
     }
 
 }
