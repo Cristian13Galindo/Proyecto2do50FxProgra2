@@ -3,10 +3,12 @@ package controlers;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import logic.CargoHangling;
 
 public class CompanyWindowControler {
 
@@ -19,6 +21,9 @@ public class CompanyWindowControler {
     public Button btnCreateCargo;
     public Label txtShowNameUser;
     public Button btnBack;
+
+    //Conexion con la clase manejadora
+    CargoHangling cargoHangling = new CargoHangling();
 
     //Metodo para cerrar la venta
     public void clicBack(ActionEvent actionEvent) {
@@ -34,7 +39,33 @@ public class CompanyWindowControler {
     * valor: txtValueCharge
     * id de la carga: txtIdCharge
     * */
+
+    String descriptionChargeTxt, originChargeTxt, destinationChargeTxt, valueChargeTxt, idChargeTxt;
     public void clicCreateCargo(ActionEvent actionEvent) {
+        descriptionChargeTxt = txtDescriptionCharge.getText();
+        originChargeTxt = txtOriginCharge.getText();
+        destinationChargeTxt = txtDestinationCharge.getText();
+        valueChargeTxt = txtValueCharge.getText();
+        idChargeTxt = txtIdCharge.getText();
+
+        if (!descriptionChargeTxt.isEmpty() && !originChargeTxt.isEmpty() && !destinationChargeTxt.isEmpty() && !valueChargeTxt.isEmpty() && !idChargeTxt.isEmpty()) {
+
+
+            Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);
+            messageWindow.setTitle("Validación exitosa, Bienvenido al sistema");
+            messageWindow.setHeaderText("");
+            messageWindow.setContentText("Bienvenido a nuestro sistema");
+            messageWindow.showAndWait();
+        }else {
+            Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);
+            messageWindow.setTitle("Error de acceso");
+            messageWindow.setHeaderText("");
+            messageWindow.setContentText("USUARIO O PASSWORD INCORRECTOS");
+            messageWindow.showAndWait();
+        }
+
+
+
     }
 }
 

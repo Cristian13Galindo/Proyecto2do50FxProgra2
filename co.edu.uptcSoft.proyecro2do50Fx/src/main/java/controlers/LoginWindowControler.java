@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import logic.CargoHangling;
 import ui.HelloApplication;
 
 import java.io.IOException;
@@ -41,9 +42,9 @@ public class LoginWindowControler {
     public ComboBox cbRol;
     ObservableList<String> rolesListCombo = FXCollections.observableArrayList("Compañia","Oferente");
 
-
     //Stage
     Stage createUserWindowStage = new Stage();
+
 
     /*
     ** Dos eventos de botones
