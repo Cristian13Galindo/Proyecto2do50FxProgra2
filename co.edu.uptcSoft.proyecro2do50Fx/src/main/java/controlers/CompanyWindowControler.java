@@ -12,6 +12,8 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import logic.CargoHangling;
 
+import java.io.IOException;
+
 public class CompanyWindowControler {
 
     //Atributos
@@ -57,7 +59,7 @@ public class CompanyWindowControler {
     * */
 
     String descriptionChargeTxt, originChargeTxt, destinationChargeTxt, valueChargeTxt, idChargeTxt;
-    public void clicCreateCargo(ActionEvent actionEvent) {
+    public void clicCreateCargo(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         descriptionChargeTxt = txtDescriptionCharge.getText();
         originChargeTxt = txtOriginCharge.getText();
         destinationChargeTxt = txtDestinationCharge.getText();
@@ -83,7 +85,9 @@ public class CompanyWindowControler {
             messageWindow.setContentText("La carga no fue creada, revise que los campos estén completos");
             messageWindow.showAndWait();
         }
-
+        Scene scene = ((Node) actionEvent.getSource()).getScene();
+        Stage stage = (Stage) scene.getWindow();
+        stage.close();
 
 
     }

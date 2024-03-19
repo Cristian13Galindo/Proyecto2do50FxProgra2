@@ -68,13 +68,15 @@ public class CargoHangling {
         return 2;
     }
 
-    public void addJob(String companyName, Charge charge) {
+    public void addJob(String companyName, Charge charge) throws IOException, ClassNotFoundException {
+        userTransport = prs.readChargeTransport();
         if (userTransport.get(companyName) == null) {
             ArrayList<Charge> charges = new ArrayList<>();
             charges.add(charge);
             userTransport.put(companyName, charges);
         }
         userTransport.get(companyName).add(charge);
+        prs.writeChargeTransport(userTransport);
     }
 
     public String showGetJobs(String companyName) {
@@ -90,7 +92,8 @@ public class CargoHangling {
         return jobs;
     }
 
-    public void createCharge(String userName, String description, String origin, String destination, Double value, String id) {
+    public void createCharge(String userName, String description, String origin, String destination, Double value, String id) throws IOException, ClassNotFoundException {
+        userCompany = prs.readChargeCompany();
         Charge chargeAux = new Charge(description, origin, destination, value, id);
         if (userCompany.containsKey(userName)) {
             userCompany.get(userName).add(chargeAux);
@@ -99,6 +102,7 @@ public class CargoHangling {
             charges.add(chargeAux);
             userCompany.put(userName, charges);
         }
+        prs.writeChargeCompany(userCompany);
     }
 
     public String showAllJobs() {
@@ -146,7 +150,7 @@ public class CargoHangling {
         return description;
     }
 
-    public void addTransportist(String companyName, String id, String name) {
+    public void addTransportist(String companyName, String id, String name) throws IOException, ClassNotFoundException {
         ArrayList<Charge> charges = userCompany.get(companyName);
         if (charges != null) {
             for (Charge c : charges) {

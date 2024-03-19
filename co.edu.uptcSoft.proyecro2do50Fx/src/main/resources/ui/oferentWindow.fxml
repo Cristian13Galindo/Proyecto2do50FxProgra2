@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,15 +16,16 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="284.0" layoutY="98.0" text="Selecciona una carga:" />
-      <ComboBox fx:id="cbAvailableCargo" layoutX="284.0" layoutY="123.0" onAction="#clicCbCargo" prefHeight="26.0" prefWidth="210.0" promptText="Cargas" />
-      <Button fx:id="btnAcceptCargo" layoutX="402.0" layoutY="324.0" mnemonicParsing="false" onAction="#clicAcceptCargo" text="Aceptar Carga" />
-      <TextFlow fx:id="txtShowJobs" layoutX="284.0" layoutY="160.0" prefHeight="154.0" prefWidth="210.0" />
+      <Label layoutX="332.0" layoutY="54.0" text="Selecciona una carga:" />
+      <Button fx:id="btnAcceptCargo" layoutX="416.0" layoutY="350.0" mnemonicParsing="false" onAction="#clicAcceptCargo" text="Aceptar Carga" />
+      <TextFlow fx:id="txtShowJobs" layoutX="284.0" layoutY="85.0" prefHeight="229.0" prefWidth="235.0" />
       <ImageView fitHeight="299.0" fitWidth="168.0" layoutX="99.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/ImagenParaOferentWindow.png" />
          </image>
       </ImageView>
-      <TextFlow fx:id="txtShowNameUser" layoutX="341.0" layoutY="49.0" prefHeight="26.0" prefWidth="157.0" />
+      <Button fx:id="btnShowCharges" layoutX="446.0" layoutY="50.0" mnemonicParsing="false" onAction="#showCharges" text="Ver cargas" />
+      <TextField fx:id="txtChoose" layoutX="281.0" layoutY="350.0" prefHeight="25.0" prefWidth="120.0" />
+      <Label layoutX="281.0" layoutY="322.0" prefHeight="17.0" prefWidth="213.0" text="Ingrese el id de la carga a selecionar:" />
    </children>
 </AnchorPane>
