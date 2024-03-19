@@ -18,7 +18,8 @@ import java.util.Objects;
 import static ui.HelloApplication.completeCombo;
 
 public class LoginWindowControler {
-
+//    contructor de cargoHandling
+    CargoHangling Ch = new CargoHangling();
     /*
     ** Atributos
     */
@@ -53,16 +54,26 @@ public class LoginWindowControler {
 
     // Atributos para los botones:
     String userTxt, passwordTxt;
-    public void clicSignIn(ActionEvent actionEvent) {
+    byte typeRoll ;
+    public void clicSignIn(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         userTxt = txtUser.getText();
         passwordTxt = txtPassword.getText();
-
-        if ((Objects.equals(userTxt, "camilo")) && (Objects.equals(passwordTxt, "1234"))) {
+        typeRoll = (byte) cbRol.getSelectionModel().getSelectedIndex();
+        if (Ch.loginUser(userTxt,passwordTxt,typeRoll ) == 1) {
+//            ofernte
             Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);
             messageWindow.setTitle("Validación exitosa, Bienvenido al sistema");
             messageWindow.setHeaderText("");
-            messageWindow.setContentText("Bienvenido a nuestro sistema");
+            messageWindow.setContentText("Bienvenido Señor Oferente");
             messageWindow.showAndWait();
+        }else if(Ch.loginUser(userTxt,passwordTxt,typeRoll ) == 0){
+//            companies
+            Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);
+            messageWindow.setTitle("Validación exitosa, Bienvenido al sistema");
+            messageWindow.setHeaderText("");
+            messageWindow.setContentText("Bienvenida Compañia");
+            messageWindow.showAndWait();
+
         }else{
             Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);
             messageWindow.setTitle("Error de acceso");

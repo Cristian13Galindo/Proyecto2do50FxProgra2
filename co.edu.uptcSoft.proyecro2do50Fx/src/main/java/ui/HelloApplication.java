@@ -1,7 +1,5 @@
 package ui;
 
-import controlers.LoginWindowControler;
-import controlers.CreateUserWindowControler;
 import javafx.application.Application;
 import javafx.beans.Observable;
 import javafx.collections.ObservableList;

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0463667b-3599-434f-a746-ca9dd248af0c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/Proyecto2do50FxProgra2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Proyecto2do50FxProgra2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co.edu.uptcSoft.proyecro2do50Fx/src/main/java/ui/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/co.edu.uptcSoft.proyecro2do50Fx/src/main/java/ui/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,11 +37,21 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/camil/Desktop/IdeaProjects/Progra2-2Uptc/Proyecto2do50FxProgra2/co.edu.uptcSoft.proyecro2do50Fx",
+    "last_opened_file_path": "C:/Users/Laptp hp/IdeaProjects/Proyecto2do50FxProgra2/co.edu.uptcSoft.proyecro2do50Fx",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

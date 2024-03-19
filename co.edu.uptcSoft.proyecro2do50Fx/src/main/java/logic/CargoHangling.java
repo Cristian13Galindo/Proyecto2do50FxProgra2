@@ -1,56 +1,71 @@
 package logic;
 
+import Persistence.Persistence;
 import model.Charge;
 import model.Company;
 import model.Oferent;
 import model.User;
 
+import java.io.IOException;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CargoHangling {
+    Persistence prs = new Persistence();
     private ArrayList<Oferent> oferents = new ArrayList<>();
     private ArrayList<Company> companies = new ArrayList<>();
     private Map<String, ArrayList<Charge>> userCompany = new HashMap<>();
     private Map<String, ArrayList<Charge>> userTransport = new HashMap<>();
 
 
-    public void createUser(String userName, String password, byte typeUser) {
+    public void createUser(String userName, String password, byte typeUser) throws IOException, ClassNotFoundException {
+
         if (typeUser == 1) {
+            oferents = prs.readOferent();
+            companies = prs.readCompany();
+            userTransport = prs.readChargeTransport();
+            userCompany = prs.readChargeCompany();
             Oferent newOferent = new Oferent(userName, password, typeUser);
             oferents.add(newOferent);
-
+            prs.writeOferent(oferents);
             if (!userCompany.containsKey(userName)) {
                 ArrayList<Charge> charges = new ArrayList<>();
                 userCompany.put(userName, charges);
+                prs.writeChargeCompany(userCompany);
             }
-        } else if (typeUser == 2) {
+        } else if (typeUser == 0) {
+
             Company newCompany = new Company(userName, password, typeUser);
             companies.add(newCompany);
-
+            prs.writeCompany(companies);
             if (!userTransport.containsKey(userName)) {
                 ArrayList<Charge> charges = new ArrayList<>();
                 userTransport.put(userName, charges);
+                prs.writeChargeTransport(userTransport);
             }
         }
     }
 
-    public boolean loginUser(String loginUserName, String loginPassword, byte typeUser) {
+    public int loginUser(String loginUserName, String loginPassword, byte typeUser) throws IOException, ClassNotFoundException {
+
         if (typeUser == 1) {
+            oferents = prs.readOferent();
             for (Oferent oferent : oferents) {
                 if (oferent.getUserName().equals(loginUserName) && oferent.getPassword().equals(loginPassword)) {
-                    return true;
+                    return 1;
                 }
             }
-        } else if (typeUser == 2) {
+        } else if (typeUser == 0) {
+            companies = prs.readCompany();
             for (Company company : companies) {
                 if (company.getUserName().equals(loginUserName) && company.getPassword().equals(loginPassword)) {
-                    return true;
+                    return 0;
                 }
             }
         }
-        return false;
+        return 2;
     }
 
     public void addJob(String companyName, Charge charge) {
