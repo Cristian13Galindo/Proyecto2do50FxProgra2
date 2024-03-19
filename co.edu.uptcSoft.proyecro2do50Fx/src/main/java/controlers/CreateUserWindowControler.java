@@ -40,6 +40,7 @@ public class CreateUserWindowControler {
     public void rolesList(Event event) {
         completeCombo(cbRol, rolesListCom);
     }
+<<<<<<< HEAD
     // Atributos para los botones:
     String userTxt, passwordTxt;
     byte typeRoll ;
@@ -57,6 +58,13 @@ public class CreateUserWindowControler {
         messageWindow.showAndWait();
     }
 
+=======
+
+    //Boton para crear un usuario
+    public void clicSignUp(ActionEvent actionEvent) {
+        //aqui la logica
+    }
+>>>>>>> 7e3ab605bbaea392257cc9e99f067e2d509289df
 }
 
 

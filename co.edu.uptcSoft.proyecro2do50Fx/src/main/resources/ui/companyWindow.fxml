@@ -24,8 +24,8 @@
       <TextField fx:id="txtDestinationCharge" layoutX="360.0" layoutY="204.0" />
       <TextField fx:id="txtValueCharge" layoutX="360.0" layoutY="266.0" />
       <TextField fx:id="txtIdCharge" layoutX="360.0" layoutY="327.0" />
-      <Button fx:id="btnCreateCharge" layoutX="435.0" layoutY="365.0" mnemonicParsing="false" text="Crear Carga" />
-      <Label fx:id="txtMostrarEmpresa" layoutX="419.0" layoutY="43.0" text="Empresa" />
+      <Button fx:id="btnCreateCargo" layoutX="435.0" layoutY="365.0" mnemonicParsing="false" onAction="#clicCreateCargo" text="Crear Carga" />
+      <Label fx:id="txtShowNameUser" layoutX="419.0" layoutY="43.0" text="Empresa" />
       <Button fx:id="btnBack" layoutX="43.0" layoutY="39.0" mnemonicParsing="false" onAction="#clicBack" text="Atras" />
       <ImageView fitHeight="329.0" fitWidth="302.0" layoutX="43.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
          <image>
