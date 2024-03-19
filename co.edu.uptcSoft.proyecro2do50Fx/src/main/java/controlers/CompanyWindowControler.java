@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import logic.CargoHangling;
 
@@ -19,7 +20,7 @@ public class CompanyWindowControler {
     public TextField txtValueCharge;
     public TextField txtIdCharge;
     public Button btnCreateCargo;
-    public Label txtShowNameUser;
+    public TextFlow txtShowNameUser;
     public Button btnBack;
 
     //Conexion con la clase manejadora
