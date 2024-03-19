@@ -17,7 +17,7 @@
       <TextField fx:id="txtNewUser" layoutX="336.0" layoutY="120.0" prefHeight="26.0" prefWidth="158.0" />
       <PasswordField fx:id="txtPassword" layoutX="336.0" layoutY="179.0" />
       <ComboBox fx:id="cbRol" layoutX="344.0" layoutY="246.0" onShowing="#rolesList" prefWidth="150.0" promptText="Rol" />
-      <Button fx:id="btnCreateNewUser" layoutX="411.0" layoutY="284.0" mnemonicParsing="false" text="Crear usuario" />
+      <Button fx:id="btnCreateNewUser" layoutX="411.0" layoutY="284.0" mnemonicParsing="false" onAction="#clicSignUp" text="Crear usuario" />
       <Label layoutX="338.0" layoutY="222.0" text="Rol de usuario" />
       <Button fx:id="btnBack" layoutX="29.0" layoutY="36.0" mnemonicParsing="false" onAction="#clicBack" text="Atras" />
       <Label layoutX="337.0" layoutY="35.0" text="Registrate">
