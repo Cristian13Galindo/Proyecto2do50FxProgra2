@@ -35,6 +35,13 @@ public class LoginWindowControler {
 
     //Este es el campo de ingreso del usuario
     public TextField txtUser;
+    public TextField getTxtUser() {
+        return txtUser;
+    }
+
+    public void setTxtUser(TextField txtUser) {
+        this.txtUser = txtUser;
+    }
 
     // boton atras
     public Button btnBack;
@@ -43,9 +50,14 @@ public class LoginWindowControler {
     public ComboBox cbRol;
     ObservableList<String> rolesListCombo = FXCollections.observableArrayList("Compañia","Oferente");
 
-    //Stage
+    //Stage de crear ventana
     Stage createUserWindowStage = new Stage();
 
+    //Stage de oferente
+    Stage oferentWindowStage = new Stage();
+
+    //Stage de compañia
+    Stage companyWindowStage = new Stage();
 
     /*
     ** Dos eventos de botones
@@ -66,6 +78,17 @@ public class LoginWindowControler {
             messageWindow.setHeaderText("");
             messageWindow.setContentText("Bienvenido Señor Oferente");
             messageWindow.showAndWait();
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("oferentWindow.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 600, 550);
+                oferentWindowStage.setTitle("Transportes Uptc/createUserWindow");
+                oferentWindowStage.setScene(scene);
+                oferentWindowStage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
         }else if(Ch.loginUser(userTxt,passwordTxt,typeRoll ) == 0){
 //            companies
             Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);
@@ -73,6 +96,16 @@ public class LoginWindowControler {
             messageWindow.setHeaderText("");
             messageWindow.setContentText("Bienvenida Compañia");
             messageWindow.showAndWait();
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("companyWindow.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 600, 550);
+                companyWindowStage.setTitle("Transportes Uptc/createUserWindow");
+                companyWindowStage.setScene(scene);
+                companyWindowStage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
         }else{
             Alert messageWindow = new Alert(Alert.AlertType.INFORMATION);

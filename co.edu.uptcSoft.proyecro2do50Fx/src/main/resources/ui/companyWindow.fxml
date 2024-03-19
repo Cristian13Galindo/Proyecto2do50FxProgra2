@@ -32,6 +32,6 @@
             <Image url="@../images/ImagenParaCompanyWindow.png" />
          </image>
       </ImageView>
-      <TextFlow fx:id="txtShowNameUser" layoutX="419.0" layoutY="39.0" prefHeight="25.0" prefWidth="143.0" />
+      <TextFlow fx:id="txtShowNameUser" layoutX="419.0" layoutY="34.0" prefHeight="36.0" prefWidth="141.0" />
    </children>
 </AnchorPane>
