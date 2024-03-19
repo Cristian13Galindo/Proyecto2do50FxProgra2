@@ -55,6 +55,7 @@ public class CreateUserWindowControler {
         messageWindow.setHeaderText("");
         messageWindow.setContentText("Ususario Creado con Exito");
         messageWindow.showAndWait();
+
     }
 
 }

@@ -46,6 +46,7 @@ public class CargoHangling {
                 prs.writeChargeTransport(userTransport);
             }
         }
+
     }
 
     public int loginUser(String loginUserName, String loginPassword, byte typeUser) throws IOException, ClassNotFoundException {

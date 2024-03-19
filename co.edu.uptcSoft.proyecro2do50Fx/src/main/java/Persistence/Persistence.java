@@ -51,7 +51,7 @@ public class Persistence {
     }
 
     public void writeChargeTransport(Map<String, ArrayList<Charge>> charge) throws IOException {
-        ObjectOutputStream write = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Laptp hp\\Documents\\documentosP\\chargeTransportTransport.dat"));
+        ObjectOutputStream write = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Laptp hp\\Documents\\documentosP\\chargeTransport.dat"));
         write.writeObject(charge);
         write.close();
     }
